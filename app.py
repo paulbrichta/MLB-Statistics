@@ -19,16 +19,15 @@ def welcome():
 
 
 def get_db_conn():
-    conn = sqlite3.connect('mlbSeason.db')
+    conn = sqlite3.connect('mlbSeason_db')
     conn.row_factory = sqlite3.Row
     return conn
 
-@app.route('/')
-@app.route('/mlb_data')
+@app.route('/api/v1.0/mlb_data')
 @cross_origin()
 def project_data():
     conn = get_db_conn()
-    posts = conn.execute('SELECT * FROM mlb_season_stats').fetchall()
+    posts = conn.execute('SELECT * FROM mlb_season_data').fetchall()
     conn.close()
     data = []
     
