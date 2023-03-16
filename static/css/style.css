@@ -1,0 +1,117 @@
+body {
+    background: #ededed;
+}
+
+.table {
+    background: white;
+}
+
+.navbar {
+    padding: 0 1rem;
+    background-color: #041e42;
+}
+
+.navbar-brand {
+    background: #041e42;
+    color: white;
+    padding: 10px;
+}
+
+.big-green {
+    margin-top: 20px;
+    font-family: georgia;
+    font-weight: bold;
+    font-size: 32pt;
+    color: #4AAAA5;
+    text-align: center
+}
+
+.small-green {
+    margin-top: 10px;
+    font-family: georgia;
+    font-weight: bold;
+    font-size: 18pt;
+    color: #4AAAA5;
+    text-align: center
+}
+
+.descriptive-text {
+    margin-top: 30px
+}
+
+.col-md-8 {
+    background: white
+}
+
+.col-6 {
+    background: white
+}
+
+.col-md-4 {
+    background: white
+}
+
+.col-sm-12 {
+    background: white
+}
+
+.col-12 {
+    background: white
+}
+
+.row {
+    --bs-gutter-x: 100px;
+    --bs-gutter-y: 100px;
+}
+
+footer {
+    text-align: center;
+    padding: 4px;
+    background-color: slategrey;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.white {
+    color: white;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    padding:6px;
+}
+
+/*
+
+html,
+body,
+#map-id {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.legend {
+    background-color: white;
+    padding: 5px;
+    line-height: 18px;
+    color: #555;
+}
+
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+*/ 
