@@ -14,7 +14,7 @@
 - [Bootstrap](https://getbootstrap.com/)
 - [JavaScript](https://htmlcheatsheet.com/js/)
 - [D3/API](https://d3js.org/)
-- Data Source: [Lahman’s Baseball Database] (https://www.openintro.org/data/index.php?data=mlb_teams)
+- [Data Source: Lahman’s Baseball Database] (https://www.openintro.org/data/index.php?data=mlb_teams)
 
 
 **Project Team Members:** 
