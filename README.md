@@ -1,1 +1,3 @@
 # MLB-Statistics
+
+## Project Background
