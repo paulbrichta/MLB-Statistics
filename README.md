@@ -116,6 +116,9 @@ In this part of the project, we wanted to combined the classification work (unsu
 - [JavaScript](https://htmlcheatsheet.com/js/)
 - [D3/API](https://d3js.org/)
 - Data Source: ![Lahman’s Baseball Database](https://www.openintro.org/data/index.php?data=mlb_teams)
+- Kwok, Ryan. 2021. [Stepwise Regression Tutorial in Python](https://towardsdatascience.com/stepwise-regression-tutorial-in-python-ebf7c782c922)
+- Chandradas, Abhijith. 2021. [How to Create a Radar Chart in Python](https://towardsdatascience.com/how-to-create-a-radar-chart-in-python-36b9ebaa7a64)
+- Shivapriya1726. 2021. [How to Standardize Data in a Pandas DataFrame?](https://www.geeksforgeeks.org/how-to-standardize-data-in-a-pandas-dataframe/)
 
 
 <footer>
