@@ -6,18 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>MLB Statistical Analysis</title>
+    <title>MLB Data Project Home Page</title>
 
     <!-- Boostrap Stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- Our own CSS stylesheet -->
     <link rel="stylesheet" href="static/css/style.css" media="screen">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Start of navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,11 +33,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="data.html">Data</a>
+                            <a class="nav-link" href="data.html">All Stats</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="comparison.html">Comparison</a>
-                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="select_data.html">Select MLB Teams</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Machine Learning
@@ -38,8 +45,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="visualizations/cluster_analysis.html">Cluster Analysis</a></li>
                             <li><a class="dropdown-item" href="visualizations/linear_regression.html">Linear Regression</a></li>
-                            <!-- <li><a class="dropdown-item" href="visualizations/cloudiness.html">N/A</a></li>
-                            <li><a class="dropdown-item" href="visualizations/wind.html">N/A</a></li> -->
                         </ul>
                     </li>
                 </ul>
@@ -48,50 +53,31 @@
     </nav>
     <!-- End of navbar -->
 
-    <!-- Start of drop-down menus -->
-    <div>
-        <h5>Year</h5>
-        <select id="selDataset" onchange="optionChanged(this.value)"></select>
-    </div>
-    <div>
-        <h5>MLB Team</h5>
-        <select id="selDataset" onchange="optionChanged(this.value)"></select>
-    </div>
-    <!-- End ofrop-down menus -->
-
-    <!-- Start of container --
+    <!-- Start of container -->
     <div class="container">
-        !-- Start of Visualizations imageNav Area --
         <div class="row">
-            <div class="col-md-8 col-sm-12 border">
-                <p class="big-green">
-                    Summary: Latitude vs. X
-                </p>
-                <hr>
-                <img src="assets/images/Fig1.png" class="img-fluid" alt="Responsive image" style="width: 750px; float: left">
-                <p>
-                    The purpose of this project was to analyze how weather changes as you get closer to the equator.
-                    To accomplish this analysis, we first pulled data from the OpenWeatherMapAPI to assemble a dataset on over 500 cities. <br><br>
-
-                    After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude.
-                    Factors we look at included: temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis,
-                    as well as explanations and descriptions of any trends and correlations witnessed.
+            <div class="col-12 border">
+                <p class="big-blue">
+                    MLB DATA ANALYSIS
                 </p>
             </div>
-            <div class="col-md-4 col-sm-12 border">
-                <p class="big-green">
-                    Visualizations
+            <div class="synopsis">
+                <p>
+                    For our project we decided to analyze Major League Baseball data by year for all MLB teams.
+                    The <a href="https://www.openintro.org/data/index.php?data=mlb_teams" target="_blank">dataset</a> contained statistics for each team from 1876-2020.
+                    We made the decision to focus only on baseball played in the modern era, post 1945. From our dataset we dropped the years that had columns that were
+                    null (certain stats were not tracked in this dataset prior to 1970 such as "batters hit by pitch" and "sacrifice flies"). We also decided to drop
+                    the year 2020 because of the shortened season (only 60 games were played) due to the COVID-19 pandemic. On the remaining data we used both
+                    supervised and unsupervised machine learning algorithms to help us analyze the data.
                 </p>
-                <hr>
-                    <img src="assets/images/Fig1.png" class="img-fluid" alt="Responsive image" style="width: 150px; float: left">
-                    <img src="assets/images/Fig2.png" class="img-fluid" alt="Responsive image" style="width: 150px; float: right">
-                    <img src="assets/images/Fig3.png" class="img-fluid" alt="Responsive image" style="width: 150px; float: left">
-                    <img src="assets/images/Fig4.png" class="img-fluid" alt="Responsive image" style="width: 150px; float: right">
+            </div>
+            <div class="img-margin">
+                <img src="https://img.mlbstatic.com/mlb-images/image/private/t_16x9/t_w1536/mlb/rzgyuh0p0anz8gy3ujcc.jpg" style="width:100%;">
+                <p class="center">Image Source: <a href="https://img.mlbstatic.com/mlb-images/image/private/t_16x9/t_w1536/mlb/rzgyuh0p0anz8gy3ujcc.jpg" target="_blank">mlb.com</a></p>
             </div>
         </div>
-        !-- End of the Visualizations imageNav Area --
     </div>
-    !-- End of container -->
+    <!-- End of container -->
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -110,7 +96,6 @@
     <a href="https://github.com/KYbarra4" class="white">Kevin Ybarra</a> &nbsp;
     <a href="https://github.com/OAEspinoza" class="white">Omar Espinoza</a> &nbsp;
     <a href="https://github.com/paulbrichta" class="white">Paul Brichta</a>
-
 </footer>
 
 </html>

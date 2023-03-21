@@ -12,15 +12,11 @@
 
     <!-- Our own CSS stylesheet -->
     <link rel="stylesheet" href="../static/css/style.css" media="screen">
-
-    <!-- Dropdown Events -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
     <!-- Start of navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,11 +25,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../data.html">Data</a>
+                            <a class="nav-link" href="../data.html">All Stats</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="comparison.html">Comparison</a>
-                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../select_data.html">Select MLB Teams</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Machine Learning
@@ -41,8 +37,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="cluster_analysis.html">Cluster Analysis</a></li>
                             <li><a class="dropdown-item" href="linear_regression.html">Linear Regression</a></li>
-                            <!-- <li><a class="dropdown-item" href="visualizations/cloudiness.html">N/A</a></li>
-                            <li><a class="dropdown-item" href="visualizations/wind.html">N/A</a></li> -->
                         </ul>
                     </li>
                 </ul>
@@ -51,24 +45,8 @@
     </nav>
     <!-- End of navbar -->
 
-    <!-- Start of drop-down menu -->
-    <div>
-        <h5>Year</h5>
-        <select id="selYear" onchange="optionChangeYear(this.value)"></select>
-    </div>
-    <div>
-        <h5>Team</h5>
-        <select id="selTeam" onchange="optionChangeTeam(this.value)"></select>
-    </div>
-    <!-- End of drop down menu -->
-
     <!-- Start of container -->
-    <div id="sample-metadata" class="panel-body"></div>
     <!-- End of container -->
-
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="../static/js/logic.js"></script>
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -79,5 +57,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>
+
+<footer>
+    <h5>Authors:</h5>
+    <a href="https://github.com/cjallow01" class="white">Cherno Jallow</a> &nbsp;
+    <a href="https://github.com/JPMCHONE1" class="white">Jason McHone</a> &nbsp;
+    <a href="https://github.com/KYbarra4" class="white">Kevin Ybarra</a> &nbsp;
+    <a href="https://github.com/OAEspinoza" class="white">Omar Espinoza</a> &nbsp;
+    <a href="https://github.com/paulbrichta" class="white">Paul Brichta</a>
+</footer>
 
 </html>

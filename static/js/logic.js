@@ -1,4 +1,3 @@
-// const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 const url = "https://mlb-teams-statistics-cjkop.onrender.com/api/v1.0/mlb_data"
 csvFile = "../../Resources/mlb_teams_classified.csv"
 
@@ -40,30 +39,10 @@ function optionChangeTeam(newTeam) {
             displayInfo(allData[i])
         }
     }
-    // chart(newSample)
-    // gaugeChart(newSample)
 }
 
-// function getData(csvFile) {
-//     d3.csv(csvFile).then(function(data) {
-        
-//     })
-// }
 
 function displayInfo(id) {
-    // d3.json(url).then(function(data) {
-        //console.log(data);
-    
-        // let teamName = data.team_name
-
-        // let firstList = data[0]
-
-        // console.log(teamName)
-
-        // let sampleArray = teamName.filter(sample => sample.team_name == team_name);
-
-        // let result = sampleArray[0];
-
     let display = d3.select("#sample-metadata")
 
     display.html("")
@@ -71,9 +50,6 @@ function displayInfo(id) {
     Object.entries(id).forEach(([key, value]) => {
         display.append("h6").text(`${key}: ${value}`)
     })
-
-    // console.log(sampleArray)
-
 }
 
 /****************************************************************************************************/
@@ -83,12 +59,8 @@ function init() {
     let optionTeam = d3.select("#selTeam");
 
     d3.json(url).then(function(data) {
-        // console.log(data);
         allData = data
 
-        // let names = data.team_name
-
-        // console.log(names)
         myYears = []
         myTeams = []
         
@@ -100,17 +72,13 @@ function init() {
                 optionYear.append("option")
                     .text(sample.year)
                     .property("value", sample.year)
-
-                // if (!myTeams.includes(sample.team_name)) {
-
-                // }
             }
         });
 
         let optionTeam = d3.select("#selTeam");
 
         console.log(optionTeam)
-        // display.html("")
+        
         document.getElementById("selTeam").innerHTML = "";
 
         yearData = []
