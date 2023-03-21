@@ -23,9 +23,6 @@ PCA, t-SNE, K-means Cluster Analysis
 •	What teams have performed best historically?
 
 
-![image](https://user-images.githubusercontent.com/114367097/226493097-f0af53f4-2763-4a4a-8fc7-6f46a682a1e0.png)
-
-
 
 
 
