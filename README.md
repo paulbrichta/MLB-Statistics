@@ -29,7 +29,8 @@ We focused on historical team data by year for all MLB teams. This data was from
 
 ## Approach: 
 
-* #Supervised Machine Learning
+**Supervised Machine Learning**
+
 We performed a **Stepwise Regression Analysis**, which is the iterative construction of a model where independent variables are removed in succession and testing for statistical significance after each iteration.
 
 ![Stepwise Regression Analysis](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/stepwise_regression_process.png)
@@ -43,6 +44,13 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 - R2 Score: **0.9304714673783749**
 - Training Score: **0.9303466731994289**
 - Testing Score: **0.9297116942632093**
+
+
+**Un-Supervised Machine Learning**
+
+![unsupervised cluster1](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/unsupervised_cluster1.png)
+
+![unsupervised cluster2](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/unsupervised_cluster2.png)
 
 
 **Tabeau Analysis**
