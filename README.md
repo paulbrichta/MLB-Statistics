@@ -22,7 +22,8 @@ PCA, t-SNE, K-means Cluster Analysis
 - Could regression analysis be used to determine the anticipated number of wins in a season?
 - What teams have performed best historically?
 
-Approach: we performed a **Stepwise Regression Analysis**, which is the iterative construction of a model where independent variables are removed in succession and testing for statistical significance after each iteration.
+## Approach: 
+We performed a **Stepwise Regression Analysis**, which is the iterative construction of a model where independent variables are removed in succession and testing for statistical significance after each iteration.
 
 ![Stepwise Regression Analysis](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/stepwise_regression_process.png)
 
@@ -32,9 +33,9 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 ![Scatter plot](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/pairplots_select.png)
 
 **Model performance:**
-R2 Score: 0.9304714673783749
-Training Score: 0.9303466731994289
-Testing Score: 0.9297116942632093
+R2 Score: **0.9304714673783749**
+Training Score: **0.9303466731994289**
+Testing Score: **0.9297116942632093**
 
 
 
