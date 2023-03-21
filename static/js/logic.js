@@ -7,8 +7,6 @@ function optionChangeYear(newYear) {
 
     let optionTeam = d3.select("#selTeam");
 
-    console.log(optionTeam)
-    // display.html("")
     document.getElementById("selTeam").innerHTML = "";
 
     yearData = []
@@ -32,13 +30,13 @@ function optionChangeYear(newYear) {
 function optionChangeTeam(newTeam) {
 
     let year = d3.select("#selYear").node().value
-    console.log(year)
     
     for (let i = 0; i < allData.length; i++) {
         if (allData[i].year == year && allData[i].team_name == newTeam) {
             displayInfo(allData[i])
         }
     }
+
 }
 
 
@@ -50,6 +48,7 @@ function displayInfo(id) {
     Object.entries(id).forEach(([key, value]) => {
         display.append("h6").text(`${key}: ${value}`)
     })
+
 }
 
 /****************************************************************************************************/
@@ -75,10 +74,6 @@ function init() {
             }
         });
 
-        let optionTeam = d3.select("#selTeam");
-
-        console.log(optionTeam)
-        
         document.getElementById("selTeam").innerHTML = "";
 
         yearData = []
