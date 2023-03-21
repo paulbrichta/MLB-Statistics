@@ -1,141 +1,135 @@
-function optionChanged(newSample) {
-    demographicInfo(newSample)
-    chart(newSample)
-    gaugeChart(newSample)
+// const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+const url = "https://mlb-teams-statistics-cjkop.onrender.com/api/v1.0/mlb_data"
+csvFile = "../../Resources/mlb_teams_classified.csv"
+
+let allData;
+
+function optionChangeYear(newYear) {
+
+    let optionTeam = d3.select("#selTeam");
+
+    console.log(optionTeam)
+    // display.html("")
+    document.getElementById("selTeam").innerHTML = "";
+
+    yearData = []
+
+    for (let i = 0; i < allData.length; i++) {
+        if (allData[i].year == newYear) {
+            yearData.push(allData[i])
+        }
+    }
+
+    for (let j = 0; j < yearData.length; j++) {
+        optionTeam.append("option")
+            .text(yearData[j].team_name)
+            .property("value", yearData[j].team_name)
+    }
+
+    displayInfo(yearData[0])
+
 }
 
+function optionChangeTeam(newTeam) {
 
-function demographicInfo(id) {
-    d3.json(url).then(function(data) {
-        // console.log(data);
+    let year = d3.select("#selYear").node().value
+    console.log(year)
     
-        let metadata = data.metadata
-
-        // console.log(metadata)
-
-        let sampleArray = metadata.filter(sample => sample.id == id);
-
-        let result = sampleArray[0];
-
-        let display = d3.select("#sample-metadata")
-
-        display.html("")
-
-        Object.entries(result).forEach(([key, value]) => {
-            display.append("h6").text(`${key}: ${value}`)
-        })
-
-        // console.log(sampleArray)
-
-    });
+    for (let i = 0; i < allData.length; i++) {
+        if (allData[i].year == year && allData[i].team_name == newTeam) {
+            displayInfo(allData[i])
+        }
+    }
+    // chart(newSample)
+    // gaugeChart(newSample)
 }
 
+// function getData(csvFile) {
+//     d3.csv(csvFile).then(function(data) {
+        
+//     })
+// }
 
-function chart(id) {  //bar
+function displayInfo(id) {
+    // d3.json(url).then(function(data) {
+        //console.log(data);
+    
+        // let teamName = data.team_name
+
+        // let firstList = data[0]
+
+        // console.log(teamName)
+
+        // let sampleArray = teamName.filter(sample => sample.team_name == team_name);
+
+        // let result = sampleArray[0];
+
+    let display = d3.select("#sample-metadata")
+
+    display.html("")
+
+    Object.entries(id).forEach(([key, value]) => {
+        display.append("h6").text(`${key}: ${value}`)
+    })
+
+    // console.log(sampleArray)
+
+}
+
+/****************************************************************************************************/
+
+function init() {
+    let optionYear = d3.select("#selYear");
+    let optionTeam = d3.select("#selTeam");
+
     d3.json(url).then(function(data) {
         // console.log(data);
+        allData = data
 
-        let samples = data.samples
+        // let names = data.team_name
 
-        // console.log(metadata)
+        // console.log(names)
+        myYears = []
+        myTeams = []
+        
+        allData.forEach((sample) => {
+            if (!myYears.includes(sample.year)) {
 
-        let sampleArray = samples.filter(sample => sample.id == id);
-        let result = sampleArray[0];
+                myYears.push(sample.year);
 
-        let otu_ids = result.otu_ids
-        let otu_labels = result.otu_labels
-        let sample_values = result.sample_values
+                optionYear.append("option")
+                    .text(sample.year)
+                    .property("value", sample.year)
 
-        let barData = [{
-            x: sample_values.slice(0, 10).reverse(),
-            y: otu_ids.slice(0, 10).map(otu_ids => `OTU ${otu_ids}`).reverse(),
-            text:otu_labels.slice(0, 10).reverse,
-            type: "bar",
-            orientation: "h"
-        }];
+                // if (!myTeams.includes(sample.team_name)) {
 
-        let bubbleData = [{
-            x: otu_ids,
-            y: sample_values,
-            text: otu_labels,
-            mode: "markers",
-            marker: {
-                size: sample_values,
-                color: otu_ids,
-                colorscale: "Earth"
+                // }
             }
-        }];
+        });
 
-        let bubbleLayout = {
-            xaxis: {title: "OTU_ID"}
+        let optionTeam = d3.select("#selTeam");
+
+        console.log(optionTeam)
+        // display.html("")
+        document.getElementById("selTeam").innerHTML = "";
+
+        yearData = []
+
+        for (let i = 0; i < allData.length; i++) {
+            if (allData[i].year == myYears[0]) {
+                yearData.push(allData[i])
+            }
         }
 
-        Plotly.newPlot("bar", barData);
-        Plotly.newPlot("bubble", bubbleData, bubbleLayout)
+        for (let j = 0; j < yearData.length; j++) {
+            optionTeam.append("option")
+                .text(yearData[j].team_name)
+                .property("value", yearData[j].team_name)
+        }
+
+        displayInfo(yearData[0])
     });
+
 }
 
-
-function gaugeChart(id) {  //gauge
-    d3.json(url).then(function(data) {
-        // console.log(data);
-
-        let metadata = data.metadata
-
-        let sampleArray = metadata.filter(sample => sample.id == id);
-
-        let result = sampleArray[0];
-
-        let wfreq = result.wfreq
-
-        let gaugeData = [{
-            type: "indicator",
-            mode: "gauge+number",
-            value: wfreq,
-            title: { text: "Belly Button Washing Frequency" },
-            // delta: { reference: 400, increasing: { color: "RebeccaPurple" } },
-            gauge: {
-                axis: { range: [null, 9], tickwidth: 1, tickcolor: "black" },
-                // bar: { color: "white" },
-                bgcolor: "white",
-                borderwidth: 2,
-                bordercolor: "gray",
-                steps: [
-                        { range: [0, 1], color: "#F8F3EC" },
-                        { range: [1, 2], color: "#F4F1E5" },
-                        { range: [2, 3], color: "#E9E6CA" },
-                        { range: [3, 4], color: "#E5E7B3" },
-                        { range: [4, 5], color: "#D5E49D" },
-                        { range: [5, 6], color: "#B7CC92" },
-                        { range: [6, 7], color: "#8CBF88" },
-                        { range: [7, 8], color: "#8ABB8F" },
-                        { range: [8, 9], color: "#85B48A" }
-                ],
-                
-            // threshold: {
-            //     line: { color: "red", width: 4 },
-            //     thickness: 0.75,
-            //     value: 490
-            // }
-        },
-        text: ["0-1", "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9"],
-        // pointer: {
-        //     type: "path",
-        //     fillcolor: "black",
-        //     line: {
-        //         width: 0
-        //     }
-        // }
-    }];
-
-    // let layout = {
-    //     width: 500,
-    //     height: 400,
-    //     margin: { t: 25, r: 25, l: 25, b: 25 },
-    //     paper_bgcolor: "lavender",
-    //     font: { color: "darkblue", family: "Arial" }
-    // };
-
-        Plotly.newPlot("gauge", gaugeData)
-    });
-}
+init();

@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Linear Regression</title>
+    <title>Cluster Analysis</title>
 
     <!-- Boostrap Stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- Our own CSS stylesheet -->
     <link rel="stylesheet" href="../static/css/style.css" media="screen">
+
+    <!-- Dropdown Events -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
@@ -47,37 +51,24 @@
     </nav>
     <!-- End of navbar -->
 
-    <!-- Start of container -->
-    <div class="container">
-        <!-- Start of Visualizations imageNav Area -->
-        <div class="row">
-            <div class="col-md-8 col-sm-12 border">
-                <p class="big-green">
-                    Humidity
-                </p>
-                <hr>
-                <img src="../assets/images/Fig2.png" class="img-fluid" alt="Responsive image" style="width: 750px">
-                <p class="descriptive-text">
-                    As expected, the weather becomes significantly warmer as one approaches the equator (0 Deg. Latitude).
-                    More Interestingly, however, is the fact that the southern hemisphere tends to be warmer this time of year
-                    than the northern hemisphere. This may be due to the tilt of the earth at the time of the year this data was
-                    gathered.
-                </p>
-            </div>
-            <div class="col-md-4 col-sm-12 border">
-                <p class="big-green">
-                    Visualizations
-                </p>
-                <hr>
-                    <img src="../assets/images/Fig1.png" class="img-fluid" alt="Responsive image" style="width: 150px; float: left">
-                    <img src="../assets/images/Fig2.png" class="img-fluid" alt="Responsive image" style="width: 150px; float: right">
-                    <img src="../assets/images/Fig3.png" class="img-fluid" alt="Responsive image" style="width: 150px; float: left">
-                    <img src="../assets/images/Fig4.png" class="img-fluid" alt="Responsive image" style="width: 150px; float: right">
-            </div>
-        </div>
-        <!-- End of the Visualizations imageNav Area -->
+    <!-- Start of drop-down menu -->
+    <div>
+        <h5>Year</h5>
+        <select id="selYear" onchange="optionChangeYear(this.value)"></select>
     </div>
+    <div>
+        <h5>Team</h5>
+        <select id="selTeam" onchange="optionChangeTeam(this.value)"></select>
+    </div>
+    <!-- End of drop down menu -->
+
+    <!-- Start of container -->
+    <div id="sample-metadata" class="panel-body"></div>
     <!-- End of container -->
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/logic.js"></script>
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
