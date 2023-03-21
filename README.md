@@ -48,7 +48,21 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 
 **Un-Supervised Machine Learning**
 
+- Using Cleaned Data from 1970 - 2019 data was prepared for classification 
+- StandardScaler was used for data transformation 
+- PCA used to reduce dimensionality 
+- TSNE was used to reduce the dataset dimensions & produce initial cluster
+
+
 ![unsupervised cluster1](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/unsupervised_cluster1.png)
+
+- Cluster Analysis was performed using KMeans
+- Elbow Curve Plotted
+- Best Clusters Determined 
+- K-3 used to predict clusters & PCA for classification
+- Classes assigned to team by year
+- Teams plotted by class/cluster 
+
 
 ![unsupervised cluster2](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/unsupervised_cluster2.png)
 
