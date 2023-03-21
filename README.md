@@ -24,6 +24,9 @@ PCA, t-SNE, K-means Cluster Analysis
 - Could regression analysis be used to determine the anticipated number of wins in a season?
 - What teams have performed best historically?
 
+##MLB DATA ANALYSIS:
+We focused on historical team data by year for all MLB teams. This data was from 1876-2020. We made the decision to focus only on baseball played in the modern era, post 1945. We then dropped nulls which took away 1946 - 1969 & 2020. With the remaining data we performed both unsupervised & supervised machine learning that resulted in 4 classifications of teams/year & a definitive list of correlated team stats.
+
 ## Approach: 
 We performed a **Stepwise Regression Analysis**, which is the iterative construction of a model where independent variables are removed in succession and testing for statistical significance after each iteration.
 
