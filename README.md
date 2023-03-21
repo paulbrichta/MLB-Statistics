@@ -46,7 +46,7 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 - Testing Score: **0.9297116942632093**
 
 
-**Un-Supervised Machine Learning**
+**Un-Supervised Machine Learning - Classification-1**
 
 - Using Cleaned Data from 1970 - 2019 data was prepared for classification 
 - StandardScaler was used for data transformation 
@@ -55,6 +55,8 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 
 
 ![unsupervised cluster1](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/unsupervised_cluster1.png)
+
+**Un-Supervised Machine Learning - Classification-2**
 
 - Cluster Analysis was performed using KMeans
 - Elbow Curve Plotted
