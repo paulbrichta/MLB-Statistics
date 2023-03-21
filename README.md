@@ -1,4 +1,7 @@
 # MLB-Statistics
+## Here are a consolidation of all the team's logos
+
+![team's logos](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/teams_logos.png)
 
 ## Project Background
 #Team 4 Project Proposal MLB Stats
@@ -33,9 +36,9 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 ![Scatter plot](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/pairplots_select.png)
 
 **Model performance:**
-R2 Score: **0.9304714673783749**
-Training Score: **0.9303466731994289**
-Testing Score: **0.9297116942632093**
+- R2 Score: **0.9304714673783749**
+- Training Score: **0.9303466731994289**
+- Testing Score: **0.9297116942632093**
 
 
 
