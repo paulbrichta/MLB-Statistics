@@ -1,7 +1,30 @@
 # MLB-Statistics
 
 ## Project Background
-![Project Proposal](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/project_proposal.png)
+#Team 4 Project Proposal MLB Stats
+We would like to analyze different team statistics including:
+1.	Team Hitting Stats (Batting Avg, RBI, etc.)
+2.	Team Pitching Stats (Strikeouts, Saves, etc.)
+3.	Team Fielding Stats (Errors, Double Plays, etc.)
+
+**Supervised learning:**
+Logistic regression, or Neural Networks
+•	Compare individual stats against a determined threshold of success (bucket the number of wins <70, 70-90, 90+).
+
+**Unsupervised learning:**
+PCA, t-SNE, K-means Cluster Analysis
+•	Use a drop-down menu to choose a team. Then it tells you which teams are most like that team based on hitting/pitching/fielding stats. Also, overall which teams the chosen team is most like and had the most similar total stats.
+•	Using the grouping to analyze which stats have more influence on whether a team will be successful or not.
+•	[Tableau Analysis](https://public.tableau.com/app/profile/jason.mchone/viz/MLBTeamAnalysis_16790042773510/Story1)
+
+**Questions we were trying to answer:**
+•	Can unsupervised learning classify teams using the data we have available?
+•	Could regression analysis be used to determine the anticipated number of wins in a season?
+•	What teams have performed best historically?
+
+
+![image](https://user-images.githubusercontent.com/114367097/226493097-f0af53f4-2763-4a4a-8fc7-6f46a682a1e0.png)
+
 
 
 
