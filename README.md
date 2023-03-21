@@ -40,7 +40,8 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 - Testing Score: **0.9297116942632093**
 
 
-
+**Tabeau Analysis**
+![tabeau analysis](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/tabeau%20analysis.png)
 
 
 
