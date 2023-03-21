@@ -1,6 +1,5 @@
 # MLB-Statistics
-## Here are a consolidation of all the team's logos
-
+## MLB Team's Logos
 ![team's logos](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/teams_logos.png)
 
 ## Project Background
