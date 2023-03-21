@@ -70,7 +70,8 @@ We also tested the model performance and the results are listed below.
 
 A pairplot was generated to visually explor how each independent variable correlated with the dependent variable ("wins"). The figure below shows the top row.
 
-![My Image](pairplots_select.png)
+
+![Scatter plot](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/pairplots_select.png)
 
 # Supervised Machine Learning - Regression Analysis
 
@@ -78,23 +79,6 @@ In this part of the project, we wanted to combined the classification work (unsu
 
 ![Scatter plot](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/pairplots_select.png)
 
-
-=======
-
-We performed a **Stepwise Regression Analysis**, which is the iterative construction of a model where independent variables are removed in succession and testing for statistical significance after each iteration.
-
-![Stepwise Regression Analysis](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/stepwise_regression_process.png)
-
-Our final model contained 10 independent variables (down from 24).
-Furthermore, collinearity was evaluated and one additional variable was dropped.
-
-![Scatter plot](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/pairplots_select.png)
-
-**Model performance:**
-- R2 Score: **0.9304714673783749**
-- Training Score: **0.9303466731994289**
-- Testing Score: **0.9297116942632093**
-- ============
 
 **Un-Supervised Machine Learning - Classification-1**
 
