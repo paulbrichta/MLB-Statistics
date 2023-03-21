@@ -49,7 +49,7 @@ We wanted to understand how much of the variability in the response variable y (
 Additionally, we wanted to find whether the number of variables can be reduced without affecting the model score significantly.
 Our approach was to perform a Stepwise Regression Analysis, which is the iterative construction of a model where independent variables are removed in succession and testing for statistical significance after each iteration (Kwok, 2021). This process is illustrated in the figure below.
 
-![My Image](stepwise_regression_process.png)
+![Stepwise Regression Analysis](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/stepwise_regression_process.png)
 
 After this process, our final model contained 10 independent variables (down from 24).
 Furthermore, collinearity was tested using the Variance Inflation Factor, and one additional variable was dropped.
@@ -76,7 +76,9 @@ A pairplot was generated to visually explor how each independent variable correl
 
 In this part of the project, we wanted to combined the classification work (unsupervised learning) and regression analysis (supervised learning) in one visualization of the different clusters and the 11 baseball statistics. We decided for using matplotlib to create a “radar chart,” which shows the relative values of all metrics and for the four clusters included. Data was normalized to the same scale using the spicy library, and its zcore tool. The resulting chart is shown next.
 
-![My Image](radar_chart.png)
+![Scatter plot](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/pairplots_select.png)
+
+
 =======
 
 We performed a **Stepwise Regression Analysis**, which is the iterative construction of a model where independent variables are removed in succession and testing for statistical significance after each iteration.
@@ -92,7 +94,7 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 - R2 Score: **0.9304714673783749**
 - Training Score: **0.9303466731994289**
 - Testing Score: **0.9297116942632093**
-============
+- ============
 
 **Un-Supervised Machine Learning - Classification-1**
 
