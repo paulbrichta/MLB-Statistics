@@ -1,75 +1,185 @@
-let api_url = "https://mlb-teams-statistics-cjkop.onrender.com/api/v1.0/mlb_data";
-// getData();
-// mlb_data = parseURLParams(api_url);
-
-fetch('https://mlb-teams-statistics-cjkop.onrender.com/api/v1.0/mlb_data')
-    .then(res => res.json())
-    .then((out) => {
-        console.log('Output: ', out);
-}).catch(err => console.error(err));
+const url = "https://mlb-teams-statistics-cjkop.onrender.com/api/v1.0/mlb_data"
 
 
-let base_url = window.location.href;
-let parknames_url = `${base_url}/api/v1.0/mlb_data`;
-// const statenames_url = `${base_url}/api/v1/states`;
-let delay = ms => new Promise(res => setTimeout(res, ms));
+let allData;
+let allDataBT;
 
-// let Promise = d3.json(mlb_data);
+function optionChangedFY(newYear) {
+
+    let optionYear = d3.select("#fieldingYear");
+
+    console.log(optionYear)
+
+    document.getElementById("fieldingYear").innerHTML = "";
+
+    yearData = []
+
+    for (let i = 0; i < allData.length; i++) {
+        if (allData[i].year == newYear) {
+            yearData.push(allData[i])
+        }
+    }
+
+    for (let j = 0; j < yearData.length; j++) {
+        optionYear.append("option")
+            .text(yearData[j].team_name)
+            .property("value", yearData[j].team_name)
+    }
+
+    displayInfo(yearData[0])
+
+};
+
+function optionChangedBY(newYearBT) {
+
+    let optionYearBT = d3.select("#battingYear");
+
+    console.log(optionYearBT)
+
+    document.getElementById("battingYear").innerHTML = "";
+
+    yearDataBT = []
+
+    for (let i = 0; i < allDataBT.length; i++) {
+        if (allDataBT[i].year == newYearBT) {
+            yearDataBT.push(allDataBT[i])
+        }
+    }
+
+    for (let j = 0; j < yearDataBT.length; j++) {
+        optionYearBT.append("option")
+            .text(yearDataBT[j].team_name)
+            .property("value", yearDataBT[j].team_name)
+    }
+
+    displayInfo(yearDataBT[0])
+
+};
+
+function optionChangedFT(newTeam) {
+
+    let year = d3.select("#fieldingTeam").node().value
+    console.log(year)
     
-console.log('Data Promise:', Promise)
+    for (let i = 0; i < allData.length; i++) {
+        if (allData[i].year == year && allData[i].team_name == newTeam) {
+            displayInfo(allData[i])
+        }
+    }
+}
+
+function optionChangedBT(newTeamBT) {
+
+    let yearBT = d3.select("#battingTeam").node().value
+    console.log(yearBT)
+    
+    for (let i = 0; i < allDataBT.length; i++) {
+        if (allDataBT[i].year == yearBT && allDataBT[i].team_name == newTeamBT) {
+            displayInfo(allDataBT[i])
+        }
+    }
+}
+
+function displayInfo(id) {
+
+    let display = d3.select("#fieldingTeamStats")
+
+    display.html("");
+
+    Object.entries(id).forEach(([key, value]) => {
+        display.append("h6").text(`${key}: ${value}`)
+    });
+
+}
+
+function displayInfoBT(idBT) {
+
+    let displayBT = d3.select("#battingTeamStats")
+
+    displayBT.html("");
+
+    Object.entries(idBT).forEach(([key, value]) => {
+        displayBT.append("h6").text(`${key}: ${value}`)
+    });
+
+}
 
 function init() {
+    let optionYear = d3.select("#fieldingYear");
+    let optionTeam = d3.select("#fieldingTeam");
+    let optionYearBT = d3.select("#battingYear");
+    let optionTeamBT = d3.select("#battingTeam");
 
-    // Creating a promise to read the data I will be using
-        let Promise = d3.json(urlParams);
-    
-        console.log('Data Promise:', Promise)
-    
-    // Reading the json file and grabbing the names to put into the dropdown menu and selecting the dropdown menu from html - #selDataset
-        d3.json(api_url).then(function (data) {
-    
-            let dropdownMenu = d3.select('#selDataset');
-            let names = data.names;
-            names.forEach((name) => {
-                dropdownMenu.append('option').text(name).property('value', name);        
-            });
-    
-    // Using the first sample in the list and creating initial charts and data
-            let beginSample = team[0];
-            buildPicture1(beginSample);
-            buildPicture2(beginSample);
-            buildTeam1(beginSample);
-            buildTeam2(beginSample);
-            buildStats1(beginSample);
-            buildStats2(beginSample)
-        });
-    }
-    
-    // Creating a function to change charts upon #selDataset dropdown change
-    function optionChanged(sampleX) {
-        buildPicture1(sampleX);
-        buildPicture2(sampleX);
-        buildTeam1(sampleX);
-        buildTeam2(sampleX);
-        buildStats1(sampleX);
-        buildStats2(sampleX)
-    }
-    
-    init();
+    d3.json(url).then(function(data) {
+        allData = data
+        allDataBT = data
 
-    function buildDemo(samples) {
-    
-        d3.json('samples.json').then((data) => {
-    
-            let demoBox = d3.select('#sample-metadata');
-            let demoData = data.metadata;
-            let information = demoData.filter(demoObject => demoObject.id == samples)[0];
-    
-            demoBox.html("");
-    
-            Object.entries(information).forEach(([key, type]) => {
-                demoBox.append('h4').text(`${key.toUpperCase()}: ${type}`);
-    
-            });
+        myYears = []
+        myTeams = []
+        myYearsBT = []
+        myTeamsBT = []
+        
+        allData.forEach((sample) => {
+            if (!myYears.includes(sample.year)) {
+
+                myYears.push(sample.year);
+
+                optionYear.append("option")
+                    .text(sample.year)
+                    .property("value", sample.year)
+
+            }
         });
-    }
+
+        allDataBT.forEach((sampleBT) => {
+            if (!myYearsBT.includes(sampleBT.year)) {
+
+                myYearsBT.push(sampleBT.year);
+
+                optionYearBT.append("option")
+                    .text(sampleBT.year)
+                    .property("value", sampleBT.year)
+
+            }
+
+        document.getElementById("fieldingTeam").innerHTML = "";
+
+        yearData = []
+
+        for (let i = 0; i < allData.length; i++) {
+            if (allData[i].year == myYears[0]) {
+                yearData.push(allData[i])
+            }
+        }
+
+        for (let j = 0; j < yearData.length; j++) {
+            optionTeam.append("option")
+                .text(yearData[j].team_name)
+                .property("value", yearData[j].team_name)
+        }
+
+        displayInfo(yearData[0])
+    });
+
+        document.getElementById("battingTeam").innerHTML = "";
+
+        yearDataBT = []
+
+        for (let i = 0; i < allDataBT.length; i++) {
+            if (allDataBT[i].year == myYearsBT[0]) {
+                yearDataBT.push(allDataBT[i])
+            }
+        }
+
+        for (let j = 0; j < yearDataBT.length; j++) {
+            optionTeamBT.append("option")
+                .text(yearDataBT[j].team_name)
+                .property("value", yearDataBT[j].team_name)
+        }
+
+        displayInfo(yearDataBT[0])
+    });
+
+}
+
+init();
