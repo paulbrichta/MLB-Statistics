@@ -55,18 +55,11 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 - Data Source: ![Lahman’s Baseball Database](https://www.openintro.org/data/index.php?data=mlb_teams)
 
 
-**Project Team Members:** 
-* Cherno Jallow: Email: cjallow@hotmail.com
-* Jason McHone:
-* Kevin Ybarra:
-* Omar Espinoza:
-* Paul Brichta:
-
 <footer>
     <h5>Authors:</h5>
-   -  <a href="https://github.com/cjallow01" class="white">Cherno Jallow</a> &nbsp; <br>
-   -  <a href="https://github.com/JPMCHONE1" class="white">Jason McHone</a> &nbsp; <br>
-   -  <a href="https://github.com/KYbarra4" class="white">Kevin Ybarra</a> &nbsp; <br>
-   -  <a href="https://github.com/OAEspinoza" class="white">Omar Espinoza</a> &nbsp; <br>
-   -  <a href="https://github.com/paulbrichta" class="white">Paul Brichta</a>
+    <a href="https://github.com/cjallow01" class="white">Cherno Jallow</a> &nbsp; <br>
+    <a href="https://github.com/JPMCHONE1" class="white">Jason McHone</a> &nbsp; <br>
+    <a href="https://github.com/KYbarra4" class="white">Kevin Ybarra</a> &nbsp; <br>
+    <a href="https://github.com/OAEspinoza" class="white">Omar Espinoza</a> &nbsp; <br>
+    <a href="https://github.com/paulbrichta" class="white">Paul Brichta</a>
 </footer>
