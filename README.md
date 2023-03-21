@@ -77,7 +77,7 @@ A pairplot was generated to visually explor how each independent variable correl
 
 In this part of the project, we wanted to combined the classification work (unsupervised learning) and regression analysis (supervised learning) in one visualization of the different clusters and the 11 baseball statistics. We decided for using matplotlib to create a “radar chart,” which shows the relative values of all metrics and for the four clusters included. Data was normalized to the same scale using the spicy library, and its zcore tool. The resulting chart is shown next.
 
-![Scatter plot](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/pairplots_select.png)
+![radar_chart](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/radar_chart.png)
 
 
 **Un-Supervised Machine Learning - Classification-1**
