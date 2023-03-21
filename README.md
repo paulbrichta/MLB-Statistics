@@ -1,6 +1,7 @@
 # MLB-Statistics
 
 ## Project Background
+![Project Proposal](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/project_proposal.png)
 
 
 
