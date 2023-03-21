@@ -64,8 +64,8 @@ Furthermore, collinearity was evaluated and one additional variable was dropped.
 
 <footer>
     <h5>Authors:</h5>
-   -  <a href="https://github.com/cjallow01" class="white">Cherno Jallow</a> &nbsp;
-   -  <a href="https://github.com/JPMCHONE1" class="white">Jason McHone</a> &nbsp;
+   -  <a href="https://github.com/cjallow01" class="white">Cherno Jallow</a> &nbsp; <br>
+   -  <a href="https://github.com/JPMCHONE1" class="white">Jason McHone</a> &nbsp; <br>
    -  <a href="https://github.com/KYbarra4" class="white">Kevin Ybarra</a> &nbsp;
    -  <a href="https://github.com/OAEspinoza" class="white">Omar Espinoza</a> &nbsp;
    -  <a href="https://github.com/paulbrichta" class="white">Paul Brichta</a>
