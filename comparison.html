@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Comparison</title>
+    <title>MLB Statistical Analysis</title>
 
     <!-- Boostrap Stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- Our own CSS stylesheet -->
+    <!-- <link rel="stylesheet" href="logic.js" media="screen"> -->
     <link rel="stylesheet" href="static/css/style.css" media="screen">
 </head>
 
 <body>
     <!-- Start of navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,11 +27,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="data.html">Data</a>
+                            <a class="nav-link" href="data.html">All Stats</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="comparison.html">Comparison</a>
-                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="select_data.html">Select MLB Teams</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comparison.html">Compare Stats</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Machine Learning
@@ -38,8 +42,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="visualizations/cluster_analysis.html">Cluster Analysis</a></li>
                             <li><a class="dropdown-item" href="visualizations/linear_regression.html">Linear Regression</a></li>
-                            <!-- <li><a class="dropdown-item" href="visualizations/cloudiness.html">N/A</a></li>
-                            <li><a class="dropdown-item" href="visualizations/wind.html">N/A</a></li> -->
                         </ul>
                     </li>
                 </ul>
@@ -48,39 +50,67 @@
     </nav>
     <!-- End of navbar -->
 
-    <!-- Start of container -->
-    <div class = container>
+    <!-- Start of drop-down menus -->
+    <div class="container">
         <div class="row">
-            <div class="col-12">
-                <p class="big-green">
-                    Comparison: Latitude vs. X
-                    <hr>
-                </p>
+            <div class="col-md-6">
+                <div id="fieldingPicture"></div>
+                    <img src="Images/fielding.jpg" alt="fielding" height="300px">
             </div>
-            <div class="col-6">
-                <p class="small-green">
-                    vs. Max Temperature
-                </p>
-                <img src="assets/images/Fig1.png" class="img-fluid" alt="Responsive image" style="width: 600px; float: left">
-                
-                <p class="small-green">
-                    vs. Cloudiness
-                </p>
-                <img src="assets/images/Fig3.png" class="img-fluid" alt="Responsive image" style="width: 600px; float: left">
+            <div class="col-md-6">
+                <div id="battingPicture"></div>
+                    <img src="Images/batting.jpg" alt="batting" height="300px">
             </div>
-            <div class="col-6">
-                <p class="small-green">
-                    vs. Humidity
-                </p>
-                <img src="assets/images/Fig2.png" class="img-fluid" alt="Responsive image" style="width: 600px; float: right">
-                <p class="small-green">
-                    vs. Wind Speed
-                </p>
-                <img src="assets/images/Fig4.png" class="img-fluid" alt="Responsive image" style="width: 600px; float: right">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <br><br>
+                <h3>Year</h3>
+                <select id="fieldingYear" onchange="optionChangedFY(this.value)"></select>
+            </div>
+            <div class="col-md-6">
+                <br><br>
+                <h3>Year</h3>
+                <select id="battingYear" onchange="optionChangedBY(this.value)"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>MLB Team</h3>
+                <select id="fieldingTeam" onchange="optionChangedFT(this.value)"></select>
+            </div>
+            <div class="col-md-6">
+                <h3>MLB Team</h3>
+                <select id="battingTeam" onchange="optionChangedBT(this.value)"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <br><br>
+                        <h3 class="panel-title"><u>Fielding Team Stats</u></h3>
+                        <br>
+                    </div>
+                    <div id="fieldingTeamStats" class="panel-body"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <br><br>
+                        <h3 class="panel-title"><u>Batting Team Stats</u></h3>
+                        <br>
+                    </div>
+                    <div id="battingTeamStats" class="panel-body"></div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- End of container -->
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="static/js/logic1.js"></script>
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -91,5 +121,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>
+
+<footer>
+    <h5>Authors:</h5>
+    <a href="https://github.com/cjallow01" class="white">Cherno Jallow</a> &nbsp;
+    <a href="https://github.com/JPMCHONE1" class="white">Jason McHone</a> &nbsp;
+    <a href="https://github.com/KYbarra4" class="white">Kevin Ybarra</a> &nbsp;
+    <a href="https://github.com/OAEspinoza" class="white">Omar Espinoza</a> &nbsp;
+    <a href="https://github.com/paulbrichta" class="white">Paul Brichta</a>
+</footer>
 
 </html>
