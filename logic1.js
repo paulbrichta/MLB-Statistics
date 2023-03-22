@@ -52,7 +52,7 @@ function optionChangedBY(newYearBT) {
             .property("value", yearDataBT[j].team_name)
     }
 
-    displayInfo(yearDataBT[0])
+    displayInfoBT(yearDataBT[0])
 
 };
 
@@ -171,7 +171,6 @@ function init() {
         }
 
         displayInfo(yearData[0])
-        // });
 
         document.getElementById("battingTeam").innerHTML = "";
 
