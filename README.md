@@ -29,6 +29,29 @@ We focused on historical team data by year for all MLB teams. This data was from
 
 ## Approach: 
 
+# Un-Supervised Machine Learning - Classification-1
+
+- Using Cleaned Data from 1970 - 2019 data was prepared for classification 
+- StandardScaler was used for data transformation 
+- PCA used to reduce dimensionality 
+- TSNE was used to reduce the dataset dimensions & produce initial cluster
+
+
+![unsupervised cluster1](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/unsupervised_cluster1.png)
+
+# Un-Supervised Machine Learning - Classification-2
+
+- Cluster Analysis was performed using KMeans
+- Elbow Curve Plotted
+- Best Clusters Determined 
+- K-3 used to predict clusters & PCA for classification
+- Classes assigned to team by year
+- Teams plotted by class/cluster 
+
+
+![unsupervised cluster2](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/unsupervised_cluster2.png)
+
+
 # Supervised Machine Learning - Regression Analysis
 After initial data processing and cleaning, our dataset contained 1384 rows and 31 columns, corresponding to MLB stats from 1970 to 2019, including 36 teams, and the following metrics and variables:
 
@@ -78,29 +101,6 @@ A pairplot was generated to visually explor how each independent variable correl
 In this part of the project, we wanted to combined the classification work (unsupervised learning) and regression analysis (supervised learning) in one visualization of the different clusters and the 11 baseball statistics. We decided for using matplotlib to create a “radar chart,” which shows the relative values of all metrics and for the four clusters included. Data was normalized to the same scale using the spicy library, and its zcore tool. The resulting chart is shown next.
 
 ![radar_chart](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/radar_chart.png)
-
-
-**Un-Supervised Machine Learning - Classification-1**
-
-- Using Cleaned Data from 1970 - 2019 data was prepared for classification 
-- StandardScaler was used for data transformation 
-- PCA used to reduce dimensionality 
-- TSNE was used to reduce the dataset dimensions & produce initial cluster
-
-
-![unsupervised cluster1](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/unsupervised_cluster1.png)
-
-**Un-Supervised Machine Learning - Classification-2**
-
-- Cluster Analysis was performed using KMeans
-- Elbow Curve Plotted
-- Best Clusters Determined 
-- K-3 used to predict clusters & PCA for classification
-- Classes assigned to team by year
-- Teams plotted by class/cluster 
-
-
-![unsupervised cluster2](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/unsupervised_cluster2.png)
 
 
 **Tabeau Analysis**
