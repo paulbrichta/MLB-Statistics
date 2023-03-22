@@ -3,7 +3,9 @@
 ![team's logos](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/teams_logos.png)
 
 ## Project Background
-#Team 4 Project Proposal MLB Stats
+
+# Team 4 Project Proposal MLB Stats
+
 We would like to analyze different team statistics including:
 1.	Team Hitting Stats (Batting Avg, RBI, etc.)
 2.	Team Pitching Stats (Strikeouts, Saves, etc.)
@@ -103,10 +105,8 @@ In this part of the project, we wanted to combined the classification work (unsu
 ![radar_chart](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/radar_chart.png)
 
 
-**Tabeau Analysis**
+# Tabeau Analysis
 ![tabeau analysis](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/tabeau%20analysis.png)
-
-
 
 
 **Reference:**
