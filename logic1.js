@@ -60,7 +60,7 @@ function optionChangedFT(newTeam) {
 
     let year = d3.select("#fieldingTeam").node().value
     console.log(year)
-    
+
     for (let i = 0; i < allData.length; i++) {
         if (allData[i].year == year && allData[i].team_name == newTeam) {
             displayInfo(allData[i])
@@ -72,10 +72,10 @@ function optionChangedBT(newTeamBT) {
 
     let yearBT = d3.select("#battingTeam").node().value
     console.log(yearBT)
-    
+
     for (let i = 0; i < allDataBT.length; i++) {
         if (allDataBT[i].year == yearBT && allDataBT[i].team_name == newTeamBT) {
-            displayInfo(allDataBT[i])
+            displayInfoBT(allDataBT[i])
         }
     }
 }
@@ -98,7 +98,9 @@ function displayInfoBT(idBT) {
 
     displayBT.html("");
 
-    Object.entries(idBT).forEach(([key, value]) => {
+    let btStats = {'at_bats': idBT.at_bats};
+
+    Object.entries(btStats).forEach(([key, value]) => {
         displayBT.append("h6").text(`${key}: ${value}`)
     });
 
@@ -110,7 +112,7 @@ function init() {
     let optionYearBT = d3.select("#battingYear");
     let optionTeamBT = d3.select("#battingTeam");
 
-    d3.json(url).then(function(data) {
+    d3.json(url).then(function (data) {
         allData = data
         allDataBT = data
 
@@ -118,7 +120,7 @@ function init() {
         myTeams = []
         myYearsBT = []
         myTeamsBT = []
-        
+
         allData.forEach((sample) => {
             if (!myYears.includes(sample.year)) {
 
@@ -141,6 +143,7 @@ function init() {
                     .property("value", sampleBT.year)
 
             }
+        });
 
         document.getElementById("fieldingTeam").innerHTML = "";
 
@@ -159,7 +162,7 @@ function init() {
         }
 
         displayInfo(yearData[0])
-    });
+        // });
 
         document.getElementById("battingTeam").innerHTML = "";
 
@@ -177,9 +180,9 @@ function init() {
                 .property("value", yearDataBT[j].team_name)
         }
 
-        displayInfo(yearDataBT[0])
+        displayInfoBT(yearDataBT[0])
+        console.log(yearBT[0])
     });
-
-}
+};
 
 init();
