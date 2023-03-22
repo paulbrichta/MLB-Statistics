@@ -2,6 +2,8 @@
 ## MLB Team's Logos
 ![team's logos](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/teams_logos.png)
 
+![team's logos](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/teams_logos2.png)
+
 ## Project Background
 
 # Team 4 Project Proposal MLB Stats
