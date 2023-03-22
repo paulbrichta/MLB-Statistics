@@ -46,6 +46,66 @@
     <!-- End of navbar -->
 
     <!-- Start of container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="big-blue">
+                    Supervised Machine Learning<br>Regression Analysis
+                </div>
+            </div>
+            <p>
+                After initial data processing and cleaning, our dataset contained 1384 rows and 31 columns, corresponding to MLB stats from 1970 to 2019, including 36 teams, and the following metrics and variables:
+            </p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <tr><td>year</td><td>walks</td><td>saves</td></tr>
+                    <tr><td>team_name</td><td>strikeouts_by_batters</td><td>outs_pitches</td></tr>
+                    <tr><td>games_played</td><td>stolen_bases</td><td>hits_allowed</td></tr>
+                    <tr><td>wins</td><td>caught_stealing</td><td>homeruns_allowed</td></tr>
+                    <tr><td>losses</td><td>batters_hit_by_pitch</td><td>walks_allowed</td></tr>
+                    <tr><td>runs_scored</td><td>sacrifice_flies</td><td>strikeouts_by_pitchers</td></tr>
+                    <tr><td>hits</td><td>opponents_runs_scored</td><td>errors</td></tr>
+                    <tr><td>doubles</td><td>earned_runs_allowed</td><td>double_plays</td></tr>
+                    <tr><td>triples</td><td>complete_games</td><td>fielding_percentage</td></tr>
+                    <tr><td>homeruns</td><td>shutouts</td><td>class'</td></tr>
+                </table>
+            </div>
+            <p class="large-pad text-align:left;">
+                We wanted to understand how much of the variability in the response variable y (number of “wins”) can be explained by changes in an X number of variables.
+                Additionally, we wanted to find whether the number of variables can be reduced without affecting the model score significantly. Our approach was to perform
+                a Stepwise Regression Analysis, which is the iterative construction of a model where independent variables are removed in succession and testing for
+                statistical significance after each iteration (Kwok, 2021). This process is illustrated in the figure below.
+                <br><br>
+                <img class="img" src="../Resources/stepwise_regression_process.png" style="width:80%;">
+                <br><br>
+                After this process, our final model contained 10 independent variables (down from 24). Furthermore, collinearity was tested using the Variance Inflation Factor,
+                and one additional variable was dropped. The final list of dependent variables are shown in the table below.
+            </p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <tr style="text-align: center;"><td>runs_scored</td><td>saves</td></tr>
+                    <tr style="text-align: center;"><td>walks</td><td>outs_pitches</td></tr>
+                    <tr style="text-align: center;"><td>opponents_runs_scored</td><td>walks_allowed</td></tr>
+                    <tr style="text-align: center;"><td>complete_games</td><td>strikeouts_by_pitchers</td></tr>
+                    <tr style="text-align: center;"><td>shutouts</td><td>errors</td></tr>
+                </table>
+            </div>
+            <p class="large-pad text-align:left;">
+                We also tested the model performance and the results are listed below:
+                    <br>- R2 Score: 0.9304714673783749
+                    <br>- Training Score: 0.9303466731994289
+                    <br>- Testing Score: 0.9297116942632093
+                    <br>A pairplot was generated to visually explor how each independent variable correlated with the dependent variable ("wins"). The figure below shows the top row.
+            </p>
+                <img class="img" src="../Resources/pairplots_select.png" style="width:80%;">
+            <p class="large-pad text-align:left; center">
+                <a href="https://towardsdatascience.com/stepwise-regression-tutorial-in-python-ebf7c782c922" target="_blank">Kwok, Ryan. 2021. Stepwise Regression Tutorial in Python.</a>
+            </p>
+                <hr>
+                <img class="img" src="../Resources/pairplots.png" style="width:80%;">
+            </p>
+        </div>
+    </div>
     <!-- End of container -->
 
     <!-- jQuery CDN -->

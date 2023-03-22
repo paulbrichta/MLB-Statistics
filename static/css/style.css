@@ -32,12 +32,20 @@ footer {
     text-align: center;
 }
 
+.col-6 {
+    background: white;
+}
+
 .col-12 {
     background: white;
 }
 
 .img-margin {
     margin-bottom: 28px;
+}
+
+.large-pad {
+    padding: 40px;
 }
 
 .navbar {
@@ -78,6 +86,7 @@ footer {
 }
 
 .row {
+    background-color: white;
     --bs-gutter-x: 100px;
     --bs-gutter-y: 100px;
 }
