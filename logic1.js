@@ -6,11 +6,11 @@ let allDataBT;
 
 function optionChangedFY(newYear) {
 
-    let optionYear = d3.select("#fieldingYear");
+    let optionYear = d3.select("#fieldingTeam");
 
     console.log(optionYear)
 
-    document.getElementById("fieldingYear").innerHTML = "";
+    document.getElementById("fieldingTeam").innerHTML = "";
 
     yearData = []
 
@@ -32,11 +32,11 @@ function optionChangedFY(newYear) {
 
 function optionChangedBY(newYearBT) {
 
-    let optionYearBT = d3.select("#battingYear");
+    let optionYearBT = d3.select("#battingTeam");
 
     console.log(optionYearBT)
 
-    document.getElementById("battingYear").innerHTML = "";
+    document.getElementById("battingTeam").innerHTML = "";
 
     yearDataBT = []
 
@@ -58,19 +58,19 @@ function optionChangedBY(newYearBT) {
 
 function optionChangedFT(newTeam) {
 
-    let year = d3.select("#fieldingTeam").node().value
-    console.log(year)
+    let yearFT = d3.select("#fieldingYear").node().value
+    console.log(yearFT)
 
     for (let i = 0; i < allData.length; i++) {
-        if (allData[i].year == year && allData[i].team_name == newTeam) {
+        if (allData[i].year == yearFT && allData[i].team_name == newTeam) {
             displayInfo(allData[i])
         }
     }
-}
+};
 
 function optionChangedBT(newTeamBT) {
 
-    let yearBT = d3.select("#battingTeam").node().value
+    let yearBT = d3.select("#battingYear").node().value
     console.log(yearBT)
 
     for (let i = 0; i < allDataBT.length; i++) {
@@ -78,7 +78,7 @@ function optionChangedBT(newTeamBT) {
             displayInfoBT(allDataBT[i])
         }
     }
-}
+};
 
 function displayInfo(id) {
 
@@ -86,8 +86,14 @@ function displayInfo(id) {
 
     display.html("");
 
-    Object.entries(id).forEach(([key, value]) => {
-        display.append("h6").text(`${key}: ${value}`)
+    let ftStats = {
+        'Games Played': id.games_played, 'Fielding Percentage': id.fielding_percentage, 'Double Plays': id.double_plays, 'Saves': id.saves, 'ERA': id.earned_run_average, 'Complete Games': id.complete_games,
+        'Strikeouts': id.strikeouts_by_pitchers, 'Errors': id.errors, 'Hits Allowed': id.hits_allowed, 'Homeruns Allowed': id.homeruns_allowed, 'Run Scored Against': id.opponents_runs_scored,
+        'Shutouts': id.shutouts, 'Walks Allowed': id.walks_allowed
+    };
+
+    Object.entries(ftStats).forEach(([key, value]) => {
+        display.append("h5").text(`${key}: ${value}`)
     });
 
 }
@@ -98,10 +104,13 @@ function displayInfoBT(idBT) {
 
     displayBT.html("");
 
-    let btStats = {'at_bats': idBT.at_bats};
+    let btStats = {
+        'Games Played': idBT.games_played, 'At Bats': idBT.at_bats, 'Hit by Pitch': idBT.batters_hit_by_pitch, 'Caught Stealing': idBT.caught_stealing, 'Doubles': idBT.doubles, 'Triples': idBT.triples, 'Homeruns': idBT.homeruns,
+        'Runs Scored': idBT.runs_scored, 'Sacrifice Flies': idBT.sacrifice_flies, 'Stolen Bases': idBT.stolen_bases, 'Walks': idBT.walks, 'Strikeouts': idBT.strikeouts_by_batters
+    };
 
     Object.entries(btStats).forEach(([key, value]) => {
-        displayBT.append("h6").text(`${key}: ${value}`)
+        displayBT.append("h5").text(`${key}: ${value}`)
     });
 
 }
@@ -181,7 +190,6 @@ function init() {
         }
 
         displayInfoBT(yearDataBT[0])
-        console.log(yearBT[0])
     });
 };
 
