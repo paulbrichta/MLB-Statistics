@@ -109,7 +109,7 @@ In this part of the project, we wanted to combined the classification work (unsu
 ![tabeau analysis](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/tabeau%20analysis.png)
 
 
-**Reference:**
+# Reference:
 - [Chart.js](https://www.chartjs.org/)
 - [Leaflet](https://leafletjs.com/examples/choropleth/)
 - [Bootstrap](https://getbootstrap.com/)
