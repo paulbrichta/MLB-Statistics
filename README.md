@@ -1,5 +1,5 @@
 # MLB-Statistics
-## MLB Team's Logos
+## MLB Teams Logos
 
 ![team's logos](https://github.com/paulbrichta/MLB-Statistics/blob/branch-cj/Images/teams_logos2.png)
 
